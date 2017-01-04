@@ -12,5 +12,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="baghdad.com.news_project.Home"
     tools:showIn="@layout/app_bar_home">
-
+<!--
+هذه شاشة home وتصميم الشاشة وهي فارغة حاليا
+-->
 </RelativeLayout>

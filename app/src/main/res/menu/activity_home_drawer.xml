@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+<!--
+هذا كود القائمة الجانبية
+ويتم تكوين القائمة حسب item
+حيث كل item تمثل row
+-->
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_camera"
             android:icon="@drawable/ic_menu_camera"
             android:title="Import" />
+        <!--
+                هنا لدينا 3 اجزاء رئيسية
+                id حيث لكل جزء يجب ان يكون id
+                الـid حيث لكل item يجب ان يكون هنالك id يميزه عن غيره
+                الـicon وهو صورة الitem حيث لكل item يوجد صورة وبامكانك ان تشيلها ليس شرط ان تكون موجودة
+                والجزء الثالث هو title وهو عنوان الitem
+        -->
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
