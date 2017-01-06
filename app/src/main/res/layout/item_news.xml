@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_margin="10dp"
+    android:background="@drawable/news"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    هذه شاشة يتم تكرارها في listview ويتم اعطاء القيم داخلها
+    <TextView
+        android:id="@+id/title"
+        android:layout_margin="5dp"
+        android:text="title_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#000" />
+    <ImageView
+        android:id="@+id/image_news"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/news_con" />
+    <Button
+        android:id="@+id/transmission"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:background="@drawable/btn"
+        android:textColor="#fff"
+        android:text="شاهد الخبر كامل"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content" />
+</LinearLayout>
