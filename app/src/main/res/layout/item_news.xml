@@ -21,7 +21,7 @@
         android:scaleType="fitXY"
         android:src="@mipmap/news_con" />
     <Button
-        android:id="@+id/transmission"
+        android:id="@+id/details_btn"
         android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:background="@drawable/btn"

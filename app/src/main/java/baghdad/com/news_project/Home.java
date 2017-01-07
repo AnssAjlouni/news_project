@@ -1,5 +1,6 @@
 package baghdad.com.news_project;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -50,6 +52,7 @@ public class Home extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+        setTitle("الرئيسية");
         //هنا ليتم ربط listview مع عنوانها بid
         ListNews = (ListView) findViewById(R.id.list_news);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -224,7 +227,7 @@ public class Home extends AppCompatActivity
                 // Must always return just a View.
                 View view = super.getView(position, convertView, parent);
                 //هنا نتصل بملف datalist الذي قمنا بانشائه بالاعلى ونعطيه البيانات حسب قيمة position
-                String[] entry = DataList.get(position);
+                final String[] entry = DataList.get(position);
                 //يتم تعريف الادوات الذي داخل الشاشة الذي سيتم تكريرها هنا
                 //ملاحظة مهمة عند تعريف اي شئ من داخل ذلك الشاشة يجب وضع view.findViewById
                 // findViewById وليس
@@ -244,7 +247,18 @@ public class Home extends AppCompatActivity
                     //نحن قمنا بعمل عنوان للسيرفر الخاص بنا ثم دمجناه مع مجلد img ثم دمجناه مع النص الذي جائنا من السيرفر ليكون عنوان الصورة كاملة
                     Picasso.with(getBaseContext()).load(AppConfig.URL_SERVER + "img/" + entry[1]).into(image_news);
                 }
-
+                //في هذا المكان قمنا بتعريف الزر شاهد الخبر كامل حتى نقوم باستخدامه
+                Button details_btn =(Button)view.findViewById(R.id.details_btn);
+                //هنا حدث النقر على الزر
+                details_btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        //هنا سيذهب الى شاشة اسمها details وسياخذ معه متغير باسم id وسيحمل قيمة id الخاص بالخبر بقاعدة البيانات
+                        Intent i = new Intent(getBaseContext(),details.class);
+                        i.putExtra("id",entry[2]);
+                        startActivity(i);
+                    }
+                });
                 return view;
             }
         };
