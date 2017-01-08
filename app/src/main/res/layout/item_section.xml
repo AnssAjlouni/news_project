@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/news"
+    android:padding="10dp"
+    android:orientation="horizontal">
+    <!-- هنا الشاشة الذي سيتم تكرارها داخل listview والذي تحمل كما هو بالاسف صورة ونص -->
+    <ImageView
+        android:layout_width="40dp"
+        android:src="@mipmap/news_con"
+        android:layout_weight="2"
+        android:id="@+id/section_img"
+        android:layout_height="40dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:text="الفروع"
+        android:textColor="#000"
+        android:layout_weight="2"
+        android:id="@+id/section_text"
+        android:layout_gravity="center_vertical"
+        android:layout_height="wrap_content" />
+</LinearLayout>

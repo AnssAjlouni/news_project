@@ -175,8 +175,12 @@ public class Home extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             //هنا عند الضعط على اول زر من القائمة والذي تحمل الـid هذا nav_camera
+
         } else if (id == R.id.nav_gallery) {
             //هنا عند الضعط على اول زر من القائمة والذي تحمل الـid هذا nav_gallery
+            //هنا نريد ان ننتقل الى شاشة باسم section لاختيار نوع الخبر
+            Intent i = new Intent(getBaseContext(),section.class);
+            startActivity(i);
         } else if (id == R.id.nav_slideshow) {
             //هنا عند الضعط على اول زر من القائمة والذي تحمل الـid هذا nav_slideshow
         } else if (id == R.id.nav_manage) {
