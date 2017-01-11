@@ -1,9 +1,11 @@
 package baghdad.com.news_project;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
@@ -114,5 +116,15 @@ public class section extends AppCompatActivity {
         };
         //هنا تنفيذ الكود adapter
         list_view_section.setAdapter(listAdapter);
+        list_view_section.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String[] entry = DataList.get(i);
+                Intent g = new Intent(getBaseContext(), news_type.class);
+                g.putExtra("section_id", entry[2]);
+                g.putExtra("section_name", entry[0]);
+                startActivity(g);
+            }
+        });
     }
 }
